@@ -1,9 +1,26 @@
 package com.pixelguardian.pharmanetapi.model.entity;
 
-public class Feedback {
-    private String comentario;
-    private float nota;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+import javax.persistence.*;
+
+@Data
+@Entity
+@AllArgsConstructor
+@NoArgsConstructor
+public class Feedback {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private String comentario;
+    private Float nota;
+
+    @ManyToOne
     private Produto produto;
+    @ManyToOne
     private Cliente cliente;
 }

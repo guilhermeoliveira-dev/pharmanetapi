@@ -1,6 +1,20 @@
 package com.pixelguardian.pharmanetapi.model.entity;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import javax.persistence.*;
+
+@Data
+@Entity
+@AllArgsConstructor
+@NoArgsConstructor
 public class Farmacia {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     private String cnpj;
     private String nome;
@@ -8,6 +22,7 @@ public class Farmacia {
     private String telefone;
     //private NaoSei imagemLogo;
 
+    @OneToOne
     private Endereco endereco;
 
 }
