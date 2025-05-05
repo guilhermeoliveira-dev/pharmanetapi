@@ -18,7 +18,7 @@ services:
     image: 'postgres:13.1-alpine'
     container_name: db
     environment:
-      - 'POSTGRES_DB=compose-postgres'
+      - 'POSTGRES_DB=pharmanet'
       - 'POSTGRES_USER=compose-postgres'
       - 'POSTGRES_PASSWORD=compose-postgres'
     ports:
