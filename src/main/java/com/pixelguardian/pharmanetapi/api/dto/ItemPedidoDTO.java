@@ -17,7 +17,8 @@ public class ItemPedidoDTO {
     private Float precoUnitario;
 
     private Long idEstoque;
-    private Integer quantidade;
+    private Integer quantidadeEstoque;
+    //TODO: talvez isso de quantidadeEstoque dê problema
     private Long idProduto;
     private Long idFornecedor;
     private Long idFarmacia;
