@@ -10,7 +10,7 @@ import org.modelmapper.ModelMapper;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ClienteDTO {
-    
+
     private Long id;
     private String nome;
     private String email;
@@ -41,5 +41,4 @@ public class ClienteDTO {
         dto.cep = cliente.getEndereco().getCep();
         return dto;
     }
-    
 }

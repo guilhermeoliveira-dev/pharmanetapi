@@ -1,6 +1,5 @@
 package com.pixelguardian.pharmanetapi.api.dto;
 
-
 import com.pixelguardian.pharmanetapi.model.entity.Categoria;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -22,5 +21,4 @@ public class CategoriaDTO {
         ModelMapper modelMapper = new ModelMapper();
         return modelMapper.map(categoria, CategoriaDTO.class);
     }
-
 }
