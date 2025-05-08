@@ -1,10 +1,13 @@
 package com.pixelguardian.pharmanetapi.api.dto;
 
+import com.pixelguardian.pharmanetapi.model.entity.Categoria;
 import com.pixelguardian.pharmanetapi.model.entity.Produto;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.modelmapper.ModelMapper;
+
+import javax.persistence.OneToOne;
 
 @Data
 @NoArgsConstructor
@@ -21,12 +24,29 @@ public class ProdutoDTO {
     private Boolean generico;
 
     private Long idTarja;
+    private String nomeTarja;
+    private String cor;
+    private Boolean requerReceita;
+    private Boolean retemReceita;
 
     private Long idCategoria;
+    private String nomeCategoria;
+    private String descricaoCategoria;
+    private Long categoriaPai;
 
     public static ProdutoDTO create(Produto produto) {
         ModelMapper modelMapper = new ModelMapper();
         ProdutoDTO dto = modelMapper.map(produto, ProdutoDTO.class);
+        dto.idTarja = produto.getTarja().getId();
+        dto.nomeTarja = produto.getTarja().getNome();
+        dto.cor = produto.getTarja().getCor();
+        dto.requerReceita = produto.getTarja().getRequerReceita();
+        dto.retemReceita = produto.getTarja().getRetemReceita();
+
+        dto.idCategoria = produto.getCategoria().getId();
+        dto.nomeCategoria = produto.getCategoria().getNome();
+        dto.descricaoCategoria = produto.getCategoria().getDescricao();
+        dto.categoriaPai = produto.getCategoria().getCategoriaPai().getId();
         return dto;
     }
 }

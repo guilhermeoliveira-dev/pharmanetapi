@@ -1,10 +1,13 @@
 package com.pixelguardian.pharmanetapi.api.dto;
 
+import com.pixelguardian.pharmanetapi.model.entity.Endereco;
 import com.pixelguardian.pharmanetapi.model.entity.Venda;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.modelmapper.ModelMapper;
+
+import javax.persistence.ManyToOne;
 
 @Data
 @NoArgsConstructor
@@ -15,12 +18,32 @@ public class VendaDTO {
     private String dataVenda;
 
     private Long idPagamento;
+    private String dataPagamento;
+    private Float valor;
+    private String formaPagamento;
 
     private Long idPedidoCompra;
+    private String codigo;
+    private String dataCriacao;
+    private String status;
+    private Float valorTotal;
+    private String tipoEntrega;
+    private String statusEntrega;
+    private String dataEntrega;
+    private Long idEndereco;
 
     public static VendaDTO create(Venda venda) {
         ModelMapper modelMapper = new ModelMapper();
         VendaDTO dto = modelMapper.map(venda, VendaDTO.class);
+        dto.idPedidoCompra = venda.getPedidoCompra().getId();
+        dto.codigo = venda.getPedidoCompra().getCodigo();
+        dto.dataCriacao = venda.getPedidoCompra().getDataCriacao();
+        dto.status = venda.getPedidoCompra().getStatus();
+        dto.valorTotal = venda.getPedidoCompra().getValorTotal();
+        dto.tipoEntrega = venda.getPedidoCompra().getTipoEntrega();
+        dto.statusEntrega = venda.getPedidoCompra().getStatusEntrega();
+        dto.dataEntrega = venda.getPedidoCompra().getDataEntrega();
+        dto.idEndereco = venda.getPedidoCompra().getEndereco().getId();
         return dto;
     }
 }
