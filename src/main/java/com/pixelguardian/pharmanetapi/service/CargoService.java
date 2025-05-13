@@ -32,12 +32,11 @@ public class CargoService {
 //    public List<Cargo> getCargoByFuncionario(Optional<Funcionario>funcionario){
 //        return repository.findByFuncionario(funcionario);
 //    }
-//}
 
     @Transactional
     public Cargo salvar(Cargo cargo){
         validar(cargo);
-        return repository.save((cargo);
+        return repository.save(cargo);
     }
 
     @Transactional
