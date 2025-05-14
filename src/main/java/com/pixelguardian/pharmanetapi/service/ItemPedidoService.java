@@ -1,4 +1,60 @@
 package com.pixelguardian.pharmanetapi.service;
 
+import com.pixelguardian.pharmanetapi.model.entity.ItemPedido;
+import com.pixelguardian.pharmanetapi.model.repository.ItemPedidoRepository;
+
+import javax.transaction.Transactional;
+import java.util.List;
+import java.util.Objects;
+import java.util.Optional;
+
 public class ItemPedidoService {
+
+    private ItemPedidoRepository repository;
+
+    public ItemPedidoService(ItemPedidoRepository repository){
+        this.repository = repository;
+    }
+
+    public List<ItemPedido> getItemPedidos(){
+        return repository.findAll();
+    }
+
+    public Optional<ItemPedido> getItemPedidoById(Long id){
+        return repository.findById(id);
+    }
+
+    @Transactional
+    public ItemPedido salvar(ItemPedido itemPedido){
+        validar(itemPedido);
+        return repository.save(itemPedido);
+    }
+
+    @Transactional
+    public void excluir(ItemPedido itemPedido){
+        Objects.requireNonNull(itemPedido.getId());
+        repository.delete(itemPedido);
+    }
+    public void validar(ItemPedido itemPedido){
+        if(itemPedido.getQuantidade() == null || itemPedido.getQuantidade() == 0){
+//            TODO: Fazer Exception
+//            throw new RegraNegocioException("Quantidade inválida");
+        }
+        if(itemPedido.getPrecoUnitario() == null || itemPedido.getPrecoUnitario() == 0){
+//            TODO: Fazer Exception
+//            throw new RegraNegocioException("Preço unitário inválido");
+        }
+        if(itemPedido.getEstoque() == null || itemPedido.getEstoque().getId() == null){
+//            TODO: Fazer Exception
+//            throw new RegraNegocioException("Estoque inválido");
+        }
+        if(itemPedido.getPedidoCompra() == null || itemPedido.getPedidoCompra().getId() == null){
+//            TODO: Fazer Exception
+//            throw new RegraNegocioException("Pedido de compra inválido");
+        }
+        if(itemPedido.getReceita() == null || itemPedido.getReceita().getId() == null){
+//            TODO: Fazer Exception
+//            throw new RegraNegocioException("Receita inválida");
+        }
+    }
 }

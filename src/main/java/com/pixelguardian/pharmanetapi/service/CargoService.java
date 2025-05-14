@@ -1,9 +1,7 @@
 package com.pixelguardian.pharmanetapi.service;
 
 import com.pixelguardian.pharmanetapi.model.entity.Cargo;
-import com.pixelguardian.pharmanetapi.model.entity.Funcionario;
 import com.pixelguardian.pharmanetapi.model.repository.CargoRepository;
-import com.sun.xml.bind.v2.TODO;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -51,4 +49,3 @@ public class CargoService {
         }
     }
 }
-

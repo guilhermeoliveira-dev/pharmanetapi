@@ -43,15 +43,15 @@ public class EstoqueService {
 //            throw new RegraNegocioException("Quantidade inválida");
         }
         if(estoque.getProduto() == null || estoque.getProduto().getId() == null){
-//            TODO: Fazer Exception
+//            TODO: Fazer Exception e reavaliar a segunda condição
 //            throw new RegraNegocioException("Produto inválida");
         }
         if(estoque.getFornecedor() == null || estoque.getFornecedor().getId() == null){
-//            TODO: Fazer Exception
+//            TODO: Fazer Exception e reavaliar a segunda condição
 //            throw new RegraNegocioException("Fornecedor inválida");
         }
         if(estoque.getFarmacia() == null || estoque.getFarmacia().getId() == null){
-//            TODO: Fazer Exception
+//            TODO: Fazer Exception e reavaliar a segunda condição
 //            throw new RegraNegocioException("Farmacia inválida");
         }
     }
