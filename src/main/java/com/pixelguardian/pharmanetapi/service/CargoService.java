@@ -1,6 +1,7 @@
 package com.pixelguardian.pharmanetapi.service;
 
 import com.pixelguardian.pharmanetapi.model.entity.Cargo;
+import com.pixelguardian.pharmanetapi.model.entity.Funcionario;
 import com.pixelguardian.pharmanetapi.model.repository.CargoRepository;
 import org.springframework.stereotype.Service;
 
@@ -27,9 +28,9 @@ public class CargoService {
     }
 
 //    TODO: Buscar cargo por funcionário
-//    public List<Cargo> getCargoByFuncionario(Optional<Funcionario>funcionario){
-//        return repository.findByFuncionario(funcionario);
-//    }
+    public Optional<Cargo> getCargoByFuncionario(Funcionario funcionario){
+        return repository.findByFuncionario(funcionario);
+    }
 
     @Transactional
     public Cargo salvar(Cargo cargo){

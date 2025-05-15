@@ -10,7 +10,7 @@ import javax.persistence.*;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-public class Funcionario {
+public class Funcionario extends Usuario{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
