@@ -43,12 +43,11 @@ public class CategoriaService {
         if (categoria.getNome() == null || categoria.getNome().trim().equals("")) {
             throw new RegraNegocioException("Nome inválido");
         }
-
-//        if (categoria.getCategoriaPai() == null || categoria.getCategoriaPai()) {
-//            throw new RegraNegocioException("Categoria Pai inválida");
-//        }
-//        if (aluno.getCurso() == null || aluno.getCurso().getId() == null || aluno.getCurso().getId() == 0) {
-//            throw new RegraNegocioException("Curso inválido");
-//        }
+        if (categoria.getDescricao() == null || categoria.getDescricao().trim().equals("")) {
+            throw new RegraNegocioException("Descrição inválida");
+            if (categoria.getCategoriaPai() == null || categoria.getCategoriaPai().getId() == null || categoria.getCategoriaPai().getId() == 0) {
+                throw new RegraNegocioException("Categoria Pai inválida");
+            }
+        }
     }
 }

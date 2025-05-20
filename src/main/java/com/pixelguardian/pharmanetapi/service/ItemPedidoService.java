@@ -1,5 +1,6 @@
 package com.pixelguardian.pharmanetapi.service;
 
+import com.pixelguardian.pharmanetapi.exception.RegraNegocioException;
 import com.pixelguardian.pharmanetapi.model.entity.ItemPedido;
 import com.pixelguardian.pharmanetapi.model.repository.ItemPedidoRepository;
 
@@ -37,24 +38,19 @@ public class ItemPedidoService {
     }
     public void validar(ItemPedido itemPedido){
         if(itemPedido.getQuantidade() == null || itemPedido.getQuantidade() == 0){
-//            TODO: Fazer Exception
-//            throw new RegraNegocioException("Quantidade inválida");
+            throw new RegraNegocioException("Quantidade inválida");
         }
         if(itemPedido.getPrecoUnitario() == null || itemPedido.getPrecoUnitario() == 0){
-//            TODO: Fazer Exception
-//            throw new RegraNegocioException("Preço unitário inválido");
+            throw new RegraNegocioException("Preço unitário inválido");
         }
         if(itemPedido.getEstoque() == null || itemPedido.getEstoque().getId() == null){
-//            TODO: Fazer Exception
-//            throw new RegraNegocioException("Estoque inválido");
+            throw new RegraNegocioException("Estoque inválido");
         }
         if(itemPedido.getPedidoCompra() == null || itemPedido.getPedidoCompra().getId() == null){
-//            TODO: Fazer Exception
-//            throw new RegraNegocioException("Pedido de compra inválido");
+            throw new RegraNegocioException("Pedido de compra inválido");
         }
         if(itemPedido.getReceita() == null || itemPedido.getReceita().getId() == null){
-//            TODO: Fazer Exception
-//            throw new RegraNegocioException("Receita inválida");
+            throw new RegraNegocioException("Receita inválida");
         }
     }
 }

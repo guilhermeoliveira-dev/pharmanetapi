@@ -1,5 +1,6 @@
 package com.pixelguardian.pharmanetapi.service;
 
+import com.pixelguardian.pharmanetapi.exception.RegraNegocioException;
 import com.pixelguardian.pharmanetapi.model.entity.Cargo;
 import com.pixelguardian.pharmanetapi.model.entity.Funcionario;
 import com.pixelguardian.pharmanetapi.model.repository.CargoRepository;
@@ -45,8 +46,7 @@ public class CargoService {
     }
     public void validar(Cargo cargo){
         if(cargo.getNome() == null || cargo.getNome().trim().equals("")){
-//            TODO: Fazer Exception
-//            throw new RegraNegocioException("Nome inválido");
+            throw new RegraNegocioException("Nome inválido");
         }
     }
 }

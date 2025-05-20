@@ -1,5 +1,6 @@
 package com.pixelguardian.pharmanetapi.service;
 
+import com.pixelguardian.pharmanetapi.exception.RegraNegocioException;
 import com.pixelguardian.pharmanetapi.model.entity.Fornecedor;
 import com.pixelguardian.pharmanetapi.model.repository.FornecedorRepository;
 
@@ -37,24 +38,19 @@ public class FornecedorService {
     }
     public void validar(Fornecedor fornecedor){
         if(fornecedor.getNome() == null || fornecedor.getNome().trim().equals("")){
-//            TODO: Fazer Exception
-//            throw new RegraNegocioException("Nome inválido");
+            throw new RegraNegocioException("Nome inválido");
         }
         if(fornecedor.getCnpj() == null || fornecedor.getCnpj().trim().equals("")){
-//            TODO: Fazer Exception
-//            throw new RegraNegocioException("CNPJ inválido");
+            throw new RegraNegocioException("CNPJ inválido");
         }
         if(fornecedor.getEmail() == null || fornecedor.getEmail().trim().equals("")){
-//            TODO: Fazer Exception
-//            throw new RegraNegocioException("E-mail inválido");
+            throw new RegraNegocioException("E-mail inválido");
         }
         if(fornecedor.getTelefone() == null || fornecedor.getTelefone().trim().equals("")){
-//            TODO: Fazer Exception
-//            throw new RegraNegocioException("Telefone inválido");
+            throw new RegraNegocioException("Telefone inválido");
         }
-        if(fornecedor.getEndereco() == null || fornecedor.getEndereco().getId() == null){
-//            TODO: Fazer Exception
-//            throw new RegraNegocioException("Fonecedor inválido");
+        if(fornecedor.getEndereco() == null || fornecedor.getEndereco().getId() == null || fornecedor.getEndereco().getId() == 0){
+            throw new RegraNegocioException("Fonecedor inválido");
         }
     }
 }
