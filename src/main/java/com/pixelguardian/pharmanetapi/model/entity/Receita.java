@@ -11,6 +11,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Receita {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

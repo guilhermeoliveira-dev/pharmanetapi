@@ -14,6 +14,7 @@ import javax.persistence.Id;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Tarja {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

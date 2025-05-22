@@ -12,6 +12,7 @@ import java.util.Optional;
 
 @Service
 public class PagamentoService {
+
     private PagamentoRepository repository;
 
     public PagamentoService(PagamentoRepository repository) {

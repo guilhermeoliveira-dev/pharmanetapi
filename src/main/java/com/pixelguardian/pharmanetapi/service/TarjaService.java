@@ -12,6 +12,7 @@ import java.util.Optional;
 
 @Service
 public class TarjaService {
+
     private TarjaRepository repository;
 
     public TarjaService(TarjaRepository repository) {

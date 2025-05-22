@@ -12,6 +12,7 @@ import java.util.Optional;
 
 @Service
 public class EstoqueService {
+
     private EstoqueRepository repository;
 
     public EstoqueService(EstoqueRepository repository) {

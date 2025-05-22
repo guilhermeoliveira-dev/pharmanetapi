@@ -10,6 +10,7 @@ import org.modelmapper.ModelMapper;
 @NoArgsConstructor
 @AllArgsConstructor
 public class PedidoCompraDTO {
+
     private String codigo;
     private String dataCriacao;
     private String status;

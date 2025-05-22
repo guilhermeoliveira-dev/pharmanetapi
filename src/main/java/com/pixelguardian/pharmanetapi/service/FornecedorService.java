@@ -12,6 +12,7 @@ import java.util.Optional;
 
 @Service
 public class FornecedorService {
+
     private FornecedorRepository repository;
 
     public FornecedorService(FornecedorRepository repository) {

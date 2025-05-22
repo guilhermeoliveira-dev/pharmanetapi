@@ -14,6 +14,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Estoque {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

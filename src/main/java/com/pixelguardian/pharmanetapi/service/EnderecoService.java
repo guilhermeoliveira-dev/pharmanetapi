@@ -12,6 +12,7 @@ import java.util.Optional;
 
 @Service
 public class EnderecoService {
+
     private EnderecoRepository repository;
 
     public EnderecoService(EnderecoRepository repository) {

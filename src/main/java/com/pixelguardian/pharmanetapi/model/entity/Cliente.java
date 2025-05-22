@@ -13,5 +13,6 @@ import javax.persistence.InheritanceType;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Cliente extends Usuario {
+
     private Float fidelidadePontos;
 }

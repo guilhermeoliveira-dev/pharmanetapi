@@ -12,6 +12,7 @@ import java.util.Optional;
 
 @Service
 public class CategoriaService {
+
     private CategoriaRepository repository;
 
     public CategoriaService(CategoriaRepository repository) {

@@ -11,6 +11,7 @@ import org.modelmapper.ModelMapper;
 @NoArgsConstructor
 @AllArgsConstructor
 public class FuncionarioDTO {
+
     private Long id;
     private String nome;
     private String email;

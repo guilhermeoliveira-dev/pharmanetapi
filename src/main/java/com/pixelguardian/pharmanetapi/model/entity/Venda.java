@@ -14,6 +14,7 @@ import javax.persistence.OneToOne;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Venda {
+
     @Id
     @GeneratedValue
     private Long id;

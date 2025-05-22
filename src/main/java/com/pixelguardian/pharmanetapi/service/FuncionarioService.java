@@ -12,6 +12,7 @@ import java.util.Optional;
 
 @Service
 public class FuncionarioService {
+
     private FuncionarioRepository repository;
 
     public FuncionarioService(FuncionarioRepository repository) {

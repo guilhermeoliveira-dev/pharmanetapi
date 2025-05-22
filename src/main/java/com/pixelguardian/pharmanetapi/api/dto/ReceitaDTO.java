@@ -14,6 +14,7 @@ import javax.persistence.ManyToOne;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ReceitaDTO {
+
     private Long id;
     private String medico;
     private String dataEmissao;

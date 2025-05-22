@@ -12,6 +12,7 @@ import java.util.Optional;
 
 @Service
 public class PermissaoService {
+
     private PermissaoRepository repository;
 
     public PermissaoService(PermissaoRepository repository) {

@@ -10,6 +10,7 @@ import org.modelmapper.ModelMapper;
 @NoArgsConstructor
 @AllArgsConstructor
 public class CategoriaDTO {
+
     private Long id;
     private String nome;
     private String descricao;

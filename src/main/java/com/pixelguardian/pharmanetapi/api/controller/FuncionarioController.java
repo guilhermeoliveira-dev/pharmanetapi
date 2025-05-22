@@ -15,6 +15,7 @@ import java.util.Optional;
 
 @RequiredArgsConstructor
 public class FuncionarioController {
+
     private final EnderecoService enderecoService;
     private final CargoService cargoService;
     private final FarmaciaService farmaciaService;

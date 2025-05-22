@@ -7,6 +7,7 @@ import org.modelmapper.ModelMapper;
 
 @RequiredArgsConstructor
 public class PagamentoController {
+
     public Pagamento converter(PagamentoDTO dto) {
         ModelMapper modelMapper = new ModelMapper();
         return modelMapper.map(dto, Pagamento.class);

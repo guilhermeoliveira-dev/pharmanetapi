@@ -10,6 +10,7 @@ import org.modelmapper.ModelMapper;
 @NoArgsConstructor
 @AllArgsConstructor
 public class FarmaciaDTO {
+
     private Long id;
     private String cnpj;
     private String nome;

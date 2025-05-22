@@ -12,6 +12,7 @@ import java.util.Optional;
 
 @RequiredArgsConstructor
 public class ReceitaController {
+
     private final FuncionarioService funcionarioService;
 
     public Receita converter(ReceitaDTO dto) {

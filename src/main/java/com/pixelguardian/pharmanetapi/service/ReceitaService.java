@@ -12,6 +12,7 @@ import java.util.Optional;
 
 @Service
 public class ReceitaService {
+
     private ReceitaRepository repository;
 
     public ReceitaService(ReceitaRepository repository) {

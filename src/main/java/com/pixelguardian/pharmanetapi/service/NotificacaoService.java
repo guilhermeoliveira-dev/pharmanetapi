@@ -12,6 +12,7 @@ import java.util.Optional;
 
 @Service
 public class NotificacaoService {
+
     private NotificacaoRepository repository;
 
     public NotificacaoService(NotificacaoRepository repository) {

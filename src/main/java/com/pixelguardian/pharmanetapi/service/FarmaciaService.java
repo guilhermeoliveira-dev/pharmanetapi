@@ -12,6 +12,7 @@ import java.util.Optional;
 
 @Service
 public class FarmaciaService {
+
     private FarmaciaRepository repository;
 
     public FarmaciaService(FarmaciaRepository repository) {
