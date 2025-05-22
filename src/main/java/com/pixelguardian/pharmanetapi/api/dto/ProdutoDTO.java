@@ -28,7 +28,8 @@ public class ProdutoDTO {
     private Long idCategoria;
     private String nomeCategoria;
     private String descricaoCategoria;
-    private Long categoriaPai;
+    //Descenecessário pro produto, e causa problemas
+//    private Long idCategoriaPai;
 
     public static ProdutoDTO create(Produto produto) {
         ModelMapper modelMapper = new ModelMapper();
@@ -42,7 +43,7 @@ public class ProdutoDTO {
         dto.idCategoria = produto.getCategoria().getId();
         dto.nomeCategoria = produto.getCategoria().getNome();
         dto.descricaoCategoria = produto.getCategoria().getDescricao();
-        dto.categoriaPai = produto.getCategoria().getCategoriaPai().getId();
+//        dto.idCategoriaPai = produto.getCategoria().getCategoriaPai().getId();
         return dto;
     }
 }

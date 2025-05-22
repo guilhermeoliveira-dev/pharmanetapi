@@ -24,8 +24,11 @@ public class ReceitaDTO {
     private Long idFuncionario;
     private Float salario;
     private String expediente;
-    private Cargo cargo;
-    private Farmacia farmacia;
+    //Essa informação é irrelevante pra receita, então nem nos damos ao trabalho de por no DTO.
+    //Além disso, não podemos colocar objetos como Cargo e Farmacia diretamente no dto,
+    // se formos colocar, temos que decompor em tipos primitivos pra ter o controle fino do que é enviado.
+//    private Cargo cargo;
+//    private Farmacia farmacia;
 
     public static ReceitaDTO create(Receita receita) {
         ModelMapper modelMapper = new ModelMapper();
@@ -33,8 +36,8 @@ public class ReceitaDTO {
         dto.idFuncionario = receita.getFuncionario().getId();
         dto.salario = receita.getFuncionario().getSalario();
         dto.expediente = receita.getFuncionario().getExpediente();
-        dto.cargo = receita.getFuncionario().getCargo();
-        dto.farmacia = receita.getFuncionario().getFarmacia();
+//        dto.cargo = receita.getFuncionario().getCargo();
+//        dto.farmacia = receita.getFuncionario().getFarmacia();
         return dto;
     }
 }

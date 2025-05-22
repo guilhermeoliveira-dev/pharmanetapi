@@ -16,8 +16,8 @@ public class ItemPedidoDTO {
 
     private Long idEstoque;
     private Integer quantidadeEstoque;
-    //TODO: talvez isso de quantidadeEstoque dê problema
     private Long idProduto;
+    private String nomeProduto;
     private Long idFornecedor;
     private Long idFarmacia;
 
@@ -45,6 +45,7 @@ public class ItemPedidoDTO {
         dto.idEstoque = itemPedido.getEstoque().getId();
         dto.quantidadeEstoque = itemPedido.getEstoque().getQuantidade();
         dto.idProduto = itemPedido.getEstoque().getProduto().getId();
+        dto.nomeProduto = itemPedido.getEstoque().getProduto().getNome();
         dto.idFornecedor = itemPedido.getEstoque().getFornecedor().getId();
         dto.idFarmacia = itemPedido.getEstoque().getFarmacia().getId();
 

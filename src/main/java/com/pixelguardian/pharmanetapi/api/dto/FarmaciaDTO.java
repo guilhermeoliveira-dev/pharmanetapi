@@ -28,6 +28,7 @@ public class FarmaciaDTO {
     public static FarmaciaDTO create(Farmacia farmacia) {
         ModelMapper modelMapper = new ModelMapper();
         FarmaciaDTO dto = modelMapper.map(farmacia, FarmaciaDTO.class);
+        dto.idEndereco = farmacia.getEndereco().getId();
         dto.logradouro = farmacia.getEndereco().getLogradouro();
         dto.numero = farmacia.getEndereco().getNumero();
         dto.complemento = farmacia.getEndereco().getComplemento();

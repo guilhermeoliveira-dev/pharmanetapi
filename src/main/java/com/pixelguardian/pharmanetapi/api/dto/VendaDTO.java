@@ -26,7 +26,6 @@ public class VendaDTO {
     private String tipoEntrega;
     private String statusEntrega;
     private String dataEntrega;
-    private Long idEndereco;
 
     public static VendaDTO create(Venda venda) {
         ModelMapper modelMapper = new ModelMapper();
@@ -39,7 +38,6 @@ public class VendaDTO {
         dto.tipoEntrega = venda.getPedidoCompra().getTipoEntrega();
         dto.statusEntrega = venda.getPedidoCompra().getStatusEntrega();
         dto.dataEntrega = venda.getPedidoCompra().getDataEntrega();
-        dto.idEndereco = venda.getPedidoCompra().getEndereco().getId();
         return dto;
     }
 }

@@ -13,11 +13,21 @@ public class CategoriaDTO {
     private Long id;
     private String nome;
     private String descricao;
-    private Categoria categoriaPai;
-    // TODO: decidir o categoria pai
+
+    private Long idCategoriaPai;
+    private String nomeCategoriaPai;
+    private String descricaoCategoriaPai;
 
     public static CategoriaDTO create(Categoria categoria) {
         ModelMapper modelMapper = new ModelMapper();
-        return modelMapper.map(categoria, CategoriaDTO.class);
+        CategoriaDTO dto = modelMapper.map(categoria, CategoriaDTO.class);
+
+        if (categoria.getCategoriaPai() != null){
+            dto.idCategoriaPai = categoria.getCategoriaPai().getId();
+            dto.nomeCategoriaPai = categoria.getCategoriaPai().getNome();
+            dto.descricaoCategoriaPai = categoria.getCategoriaPai().getDescricao();
+        }
+
+        return dto;
     }
 }
