@@ -9,8 +9,6 @@ import org.modelmapper.ModelMapper;
 public class PagamentoController {
     public Pagamento converter(PagamentoDTO dto) {
         ModelMapper modelMapper = new ModelMapper();
-        Pagamento pagamento = modelMapper.map(dto, Pagamento.class);
-        //    TODO: Aponta redundâncoia em pagamento
-        return pagamento;
+        return modelMapper.map(dto, Pagamento.class);
     }
 }

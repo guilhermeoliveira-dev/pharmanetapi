@@ -10,14 +10,14 @@ import java.util.Optional;
 
 @RequiredArgsConstructor
 public class CategoriaController {
-    private final CategoriaService categoriaService;
+    private CategoriaService categoriaService;
 
     public Categoria converter(CategoriaDTO dto) {
         ModelMapper modelMapper = new ModelMapper();
         Categoria categoria = modelMapper.map(dto, Categoria.class);
-        if (dto.getCategoriaPai() != null) {
-            Optional<Categoria> categoriaPai = CategoriaService.getCategoriaById((dto.getCategoriaPai()));
-            //    TODO: Pede para transformar getCategoriaById em static e, por consequência, o repository
+        if (dto.getIdCategoriaPai() != null) {
+            Optional<Categoria> categoriaPai = categoriaService.getCategoriaById(dto.getIdCategoriaPai());
+
             if (categoriaPai.isPresent()) {
                 categoria.setCategoriaPai(categoriaPai.get());
             } else {

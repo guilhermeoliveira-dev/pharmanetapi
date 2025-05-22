@@ -1,8 +1,8 @@
 package com.pixelguardian.pharmanetapi.api.controller;
 
-import com.pixelguardian.pharmanetapi.api.dto.ClienteDTO;
-import com.pixelguardian.pharmanetapi.model.entity.Cliente;
+import com.pixelguardian.pharmanetapi.api.dto.PedidoCompraDTO;
 import com.pixelguardian.pharmanetapi.model.entity.Endereco;
+import com.pixelguardian.pharmanetapi.model.entity.PedidoCompra;
 import com.pixelguardian.pharmanetapi.service.EnderecoService;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
@@ -10,20 +10,30 @@ import org.modelmapper.ModelMapper;
 import java.util.Optional;
 
 @RequiredArgsConstructor
-public class ClienteController {
+public class PedidoCompraController {
+
     private EnderecoService enderecoService;
 
-    public Cliente converter(ClienteDTO dto) {
+    public PedidoCompra converter(PedidoCompraDTO dto) {
+
         ModelMapper modelMapper = new ModelMapper();
-        Cliente cliente = modelMapper.map(dto, Cliente.class);
+
+        PedidoCompra pedidoCompra = modelMapper.map(dto, PedidoCompra.class);
+
+
         if (dto.getIdEndereco() != null) {
-            Optional<Endereco> endereco = enderecoService.getEnderecoById((dto.getIdEndereco()));
+
+            Optional<Endereco> endereco = enderecoService.getEnderecoById(dto.getIdEndereco());
             if (endereco.isPresent()) {
-                cliente.setEndereco(endereco.get());
+                pedidoCompra.setEndereco(endereco.get());
             } else {
-                cliente.setEndereco(null);
+                pedidoCompra.setEndereco(null);
             }
         }
-        return cliente;
+
+
+        return pedidoCompra;
+
     }
+
 }
