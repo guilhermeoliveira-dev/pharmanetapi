@@ -12,7 +12,6 @@ import java.util.Optional;
 
 @Service
 public class VendaService {
-
     private VendaRepository repository;
 
     public VendaService(VendaRepository repository) {
@@ -40,18 +39,14 @@ public class VendaService {
     }
 
     public void validar(Venda venda) {
-
-        if (venda.getDataVenda() == null || venda.getDataVenda().trim().equals(""))  {
+        if (venda.getDataVenda() == null || venda.getDataVenda().trim().equals("")) {
             throw new RegraNegocioException("Data da Venda inválida");
         }
-
         if (venda.getPagamento() == null || venda.getPagamento().getId() == null || venda.getPagamento().getId() == 0) {
             throw new RegraNegocioException("Pagamento inválido");
         }
         if (venda.getPedidoCompra() == null || venda.getPedidoCompra().getId() == null || venda.getPedidoCompra().getId() == 0) {
-
             throw new RegraNegocioException("Pedido de Compra inválido");
         }
-
     }
 }

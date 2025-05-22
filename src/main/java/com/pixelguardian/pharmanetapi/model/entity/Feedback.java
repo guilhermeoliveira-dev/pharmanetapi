@@ -8,10 +8,9 @@ import javax.persistence.*;
 
 @Data
 @Entity
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 public class Feedback {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -21,6 +20,7 @@ public class Feedback {
 
     @ManyToOne
     private Produto produto;
+
     @ManyToOne
     private Cliente cliente;
 }

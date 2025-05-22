@@ -12,7 +12,6 @@ import java.util.Optional;
 
 @Service
 public class CategoriaService {
-
     private CategoriaRepository repository;
 
     public CategoriaService(CategoriaRepository repository) {
@@ -45,9 +44,9 @@ public class CategoriaService {
         }
         if (categoria.getDescricao() == null || categoria.getDescricao().trim().equals("")) {
             throw new RegraNegocioException("Descrição inválida");
-            if (categoria.getCategoriaPai() == null || categoria.getCategoriaPai().getId() == null || categoria.getCategoriaPai().getId() == 0) {
-                throw new RegraNegocioException("Categoria Pai inválida");
-            }
+        }
+        if (categoria.getCategoriaPai() == null || categoria.getCategoriaPai().getId() == null || categoria.getCategoriaPai().getId() == 0) {
+            throw new RegraNegocioException("Categoria Pai inválida");
         }
     }
 }

@@ -8,10 +8,9 @@ import javax.persistence.*;
 
 @Data
 @Entity
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 public class Notificacao {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -22,5 +21,4 @@ public class Notificacao {
     private String mensagem;
     private String dataEnvio;
     private String tipoNotificacao;
-
 }

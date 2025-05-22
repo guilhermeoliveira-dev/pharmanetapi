@@ -12,7 +12,6 @@ import java.util.Optional;
 
 @Service
 public class NotificacaoService {
-
     private NotificacaoRepository repository;
 
     public NotificacaoService(NotificacaoRepository repository) {
@@ -43,14 +42,11 @@ public class NotificacaoService {
         if (notificacao.getUsuario() == null || notificacao.getUsuario().getId() == null || notificacao.getUsuario().getId() == 0) {
             throw new RegraNegocioException("Usuário inválido");
         }
-
-        if (notificacao.getMensagem() == null || notificacao.getMensagem().trim().equals("")){
+        if (notificacao.getMensagem() == null || notificacao.getMensagem().trim().equals("")) {
             throw new RegraNegocioException("Mensagem inválida");
         }
-
-        if (notificacao.getTipoNotificacao() == null || notificacao.getTipoNotificacao().trim().equals("")){
+        if (notificacao.getTipoNotificacao() == null || notificacao.getTipoNotificacao().trim().equals("")) {
             throw new RegraNegocioException("Tipo de Notificação inválido");
         }
-
     }
 }

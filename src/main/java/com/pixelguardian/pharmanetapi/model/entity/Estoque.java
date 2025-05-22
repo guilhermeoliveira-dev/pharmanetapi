@@ -11,10 +11,9 @@ import javax.persistence.*;
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "type")
 @DiscriminatorValue("estoque")
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 public class Estoque {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -29,5 +28,4 @@ public class Estoque {
 
     @ManyToOne
     private Farmacia farmacia;
-
 }

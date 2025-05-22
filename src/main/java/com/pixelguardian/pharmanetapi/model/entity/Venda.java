@@ -11,10 +11,9 @@ import javax.persistence.OneToOne;
 
 @Data
 @Entity
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 public class Venda {
-
     @Id
     @GeneratedValue
     private Long id;

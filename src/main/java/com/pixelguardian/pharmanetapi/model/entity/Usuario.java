@@ -11,9 +11,7 @@ import lombok.NoArgsConstructor;
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 @NoArgsConstructor
 @AllArgsConstructor
-
 public abstract class Usuario {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -28,5 +26,4 @@ public abstract class Usuario {
 
     @OneToOne
     private Endereco endereco;
-
 }

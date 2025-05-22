@@ -12,7 +12,6 @@ import java.util.Optional;
 
 @Service
 public class ReceitaService {
-
     private ReceitaRepository repository;
 
     public ReceitaService(ReceitaRepository repository) {
@@ -40,31 +39,24 @@ public class ReceitaService {
     }
 
     public void validar(Receita receita) {
-
         if (receita.getMedico() == null || receita.getMedico().trim().equals("")) {
             throw new RegraNegocioException("Médico inválido");
         }
-
         if (receita.getDataEmissao() == null || receita.getDataEmissao().trim().equals("")) {
             throw new RegraNegocioException("Data de Emissão inválida");
         }
-
         if (receita.getValidade() == null || receita.getValidade().trim().equals("")) {
             throw new RegraNegocioException("Validade inválida");
         }
-
         if (receita.getItemPrescrito() == null || receita.getItemPrescrito().trim().equals("")) {
             throw new RegraNegocioException("Item Prescrito inválida");
         }
-
-        if (receita.getAprovado() == null){
+        if (receita.getAprovado() == null) {
             throw new RegraNegocioException("Aprovado inválido");
         }
-
         if (receita.getFuncionario() == null || receita.getFuncionario().getId() == null || receita.getFuncionario().getId() == 0) {
 
             throw new RegraNegocioException("Funcionário inválido");
         }
-
     }
 }

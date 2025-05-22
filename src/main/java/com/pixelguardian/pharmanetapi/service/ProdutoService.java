@@ -12,7 +12,6 @@ import java.util.Optional;
 
 @Service
 public class ProdutoService {
-
     private ProdutoRepository repository;
 
     public ProdutoService(ProdutoRepository repository) {
@@ -40,40 +39,31 @@ public class ProdutoService {
     }
 
     public void validar(Produto produto) {
-
         if (produto.getPreco() == null) {
             throw new RegraNegocioException("Preço inválida");
         }
-
         if (produto.getPeso() == null) {
             throw new RegraNegocioException("Peso inválida");
         }
-
-        if (produto.getRequerLote() == null){
+        if (produto.getRequerLote() == null) {
             throw new RegraNegocioException("Requer Lote Inválido");
         }
-
-        if (produto.getGenerico() == null){
+        if (produto.getGenerico() == null) {
             throw new RegraNegocioException("Genérico Inválido");
         }
-
-        if (produto.getNome() == null || produto.getNome().trim().equals("")){
+        if (produto.getNome() == null || produto.getNome().trim().equals("")) {
             throw new RegraNegocioException("Nome inválido");
         }
-
-        if (produto.getDescricao() == null){
+        if (produto.getDescricao() == null) {
             //  || produto.getDescricao().trim().equals("")
             // descrição pode ser vazia? Se não, adicionar a linha acima na condição
             throw new RegraNegocioException("Descrição inválida");
         }
-
-        if (produto.getTarja() == null || produto.getTarja().getId() == null || produto.getTarja().getId() == 0 ){
+        if (produto.getTarja() == null || produto.getTarja().getId() == null || produto.getTarja().getId() == 0) {
             throw new RegraNegocioException("Tarja Inválida");
         }
-
-        if (produto.getCategoria() == null || produto.getCategoria().getId() == null || produto.getCategoria().getId() == 0){
+        if (produto.getCategoria() == null || produto.getCategoria().getId() == null || produto.getCategoria().getId() == 0) {
             throw new RegraNegocioException("Categoria Inválida");
         }
-
     }
 }

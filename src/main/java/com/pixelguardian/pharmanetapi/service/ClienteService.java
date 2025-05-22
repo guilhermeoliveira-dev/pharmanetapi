@@ -12,7 +12,6 @@ import java.util.Optional;
 
 @Service
 public class ClienteService {
-
     private ClienteRepository repository;
 
     private ClienteService(ClienteRepository repository) {
@@ -40,31 +39,24 @@ public class ClienteService {
     }
 
     public void validar(Cliente cliente) {
-
         if (cliente.getNome() == null || cliente.getNome().trim().equals("")) {
             throw new RegraNegocioException("Nome inválido");
         }
-
         if (cliente.getSenha() == null || cliente.getSenha().trim().equals("")) {
             throw new RegraNegocioException("Senha inválida");
         }
-
         if (cliente.getCpf() == null || cliente.getCpf().trim().equals("")) {
             throw new RegraNegocioException("CPF inválido");
         }
-
         if (cliente.getTelefone() == null || cliente.getTelefone().trim().equals("")) {
             throw new RegraNegocioException("Telefone inválido");
         }
-
         if (cliente.getDataAdmissao() == null || cliente.getDataAdmissao().trim().equals("")) {
             throw new RegraNegocioException("Data de Admissão inválida");
         }
-
         if (cliente.getEndereco() == null || cliente.getEndereco().getId() == null || cliente.getEndereco().getId() == 0) {
             throw new RegraNegocioException("Endereço inválido");
         }
-
         if (cliente.getFidelidadePontos() == null) {
             throw new RegraNegocioException("Pontos de fidalidade inválidos");
         }

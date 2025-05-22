@@ -13,39 +13,39 @@ import java.util.Optional;
 
 @Service
 public class CargoService {
-
     private CargoRepository repository;
 
-    public CargoService(CargoRepository repository){
+    public CargoService(CargoRepository repository) {
         this.repository = repository;
     }
 
-    public List<Cargo> getCargos(){
+    public List<Cargo> getCargos() {
         return repository.findAll();
     }
 
-    public Optional<Cargo> getCargoById(Long id){
+    public Optional<Cargo> getCargoById(Long id) {
         return repository.findById(id);
     }
 
-//    TODO: Buscar cargo por funcionário
-    public Optional<Cargo> getCargoByFuncionario(Funcionario funcionario){
+    //    TODO: Buscar cargo por funcionário
+    public Optional<Cargo> getCargoByFuncionario(Funcionario funcionario) {
         return repository.findByFuncionario(funcionario);
     }
 
     @Transactional
-    public Cargo salvar(Cargo cargo){
+    public Cargo salvar(Cargo cargo) {
         validar(cargo);
         return repository.save(cargo);
     }
 
     @Transactional
-    public void excluir(Cargo cargo){
+    public void excluir(Cargo cargo) {
         Objects.requireNonNull(cargo.getId());
         repository.delete(cargo);
     }
-    public void validar(Cargo cargo){
-        if(cargo.getNome() == null || cargo.getNome().trim().equals("")){
+
+    public void validar(Cargo cargo) {
+        if (cargo.getNome() == null || cargo.getNome().trim().equals("")) {
             throw new RegraNegocioException("Nome inválido");
         }
     }

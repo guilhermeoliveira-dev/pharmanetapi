@@ -10,7 +10,6 @@ import org.modelmapper.ModelMapper;
 @NoArgsConstructor
 @AllArgsConstructor
 public class PagamentoDTO {
-
     private Long id;
     private String dataPagamento;
     private Float valor;

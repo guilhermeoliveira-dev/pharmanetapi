@@ -8,10 +8,9 @@ import javax.persistence.*;
 
 @Data
 @Entity
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 public class Funcionario extends Usuario{
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -21,6 +20,7 @@ public class Funcionario extends Usuario{
 
     @ManyToOne
     private Cargo cargo;
+
     @ManyToOne
     private Farmacia farmacia;
 }

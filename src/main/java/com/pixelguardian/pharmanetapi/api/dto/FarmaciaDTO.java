@@ -1,6 +1,5 @@
 package com.pixelguardian.pharmanetapi.api.dto;
 
-import com.pixelguardian.pharmanetapi.model.entity.Endereco;
 import com.pixelguardian.pharmanetapi.model.entity.Farmacia;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -8,10 +7,9 @@ import lombok.NoArgsConstructor;
 import org.modelmapper.ModelMapper;
 
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 public class FarmaciaDTO {
-
     private Long id;
     private String cnpj;
     private String nome;

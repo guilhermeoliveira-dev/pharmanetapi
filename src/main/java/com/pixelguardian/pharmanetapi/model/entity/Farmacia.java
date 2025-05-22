@@ -8,10 +8,9 @@ import javax.persistence.*;
 
 @Data
 @Entity
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 public class Farmacia {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -24,5 +23,4 @@ public class Farmacia {
 
     @OneToOne
     private Endereco endereco;
-
 }

@@ -12,8 +12,8 @@ import javax.persistence.*;
 @DiscriminatorValue("estoqueLote")
 @NoArgsConstructor
 @AllArgsConstructor
-public class EstoqueLote extends Estoque{
-
+public class EstoqueLote extends Estoque {
+    //    TODO: Sem @Id nem @GenerateValue?
     private String lote;
     private String dataFabricacao;
     private String dataValidade;

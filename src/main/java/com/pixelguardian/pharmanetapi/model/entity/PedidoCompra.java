@@ -8,10 +8,9 @@ import javax.persistence.*;
 
 @Data
 @Entity
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 public class PedidoCompra {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -26,5 +25,4 @@ public class PedidoCompra {
 
     @ManyToOne
     private Endereco endereco;
-
 }

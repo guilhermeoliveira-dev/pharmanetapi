@@ -12,7 +12,6 @@ import java.util.Optional;
 
 @Service
 public class PermissaoService {
-
     private PermissaoRepository repository;
 
     public PermissaoService(PermissaoRepository repository) {
@@ -40,14 +39,11 @@ public class PermissaoService {
     }
 
     public void validar(Permissao permissao) {
-
         if (permissao.getNome() == null || permissao.getNome().trim().equals("")) {
             throw new RegraNegocioException("Nome inválido");
         }
-
         if (permissao.getCargo() == null || permissao.getCargo().getId() == null || permissao.getCargo().getId() == 0) {
             throw new RegraNegocioException("Produto inválido");
         }
-
     }
 }

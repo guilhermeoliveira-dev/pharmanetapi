@@ -1,4 +1,5 @@
 package com.pixelguardian.pharmanetapi.model.entity;
+
 import javax.persistence.*;
 
 import lombok.AllArgsConstructor;
@@ -10,7 +11,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Categoria {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -20,5 +20,4 @@ public class Categoria {
 
     @OneToOne
     private Categoria categoriaPai;
-
 }

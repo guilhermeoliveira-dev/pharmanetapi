@@ -12,7 +12,6 @@ import java.util.Optional;
 
 @Service
 public class TarjaService {
-
     private TarjaRepository repository;
 
     public TarjaService(TarjaRepository repository) {
@@ -34,15 +33,14 @@ public class TarjaService {
     }
 
     @Transactional
-    public void excluir(Tarja tarja){
+    public void excluir(Tarja tarja) {
         Objects.requireNonNull(tarja.getId());
         repository.delete(tarja);
     }
 
-    public void validar(Tarja tarja){
-       if (tarja == null || tarja.getId() == 0){
-           throw new RegraNegocioException("Tarja Inválida");
-       }
+    public void validar(Tarja tarja) {
+        if (tarja == null || tarja.getId() == 0) {
+            throw new RegraNegocioException("Tarja Inválida");
+        }
     }
-
 }

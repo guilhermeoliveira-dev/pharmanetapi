@@ -1,19 +1,15 @@
 package com.pixelguardian.pharmanetapi.api.dto;
 
-import com.pixelguardian.pharmanetapi.model.entity.Categoria;
 import com.pixelguardian.pharmanetapi.model.entity.Produto;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.modelmapper.ModelMapper;
 
-import javax.persistence.OneToOne;
-
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class ProdutoDTO {
-
     private Long id;
     private String nome;
     private String descricao;

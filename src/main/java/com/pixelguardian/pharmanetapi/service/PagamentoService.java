@@ -12,7 +12,6 @@ import java.util.Optional;
 
 @Service
 public class PagamentoService {
-
     private PagamentoRepository repository;
 
     public PagamentoService(PagamentoRepository repository) {
@@ -40,20 +39,16 @@ public class PagamentoService {
     }
 
     public void validar(Pagamento pagamento) {
-
         if (pagamento.getValor() == null) {
             throw new RegraNegocioException("Valor inválido");
         }
-
-        if (pagamento.getDataPagamento() == null || pagamento.getDataPagamento().trim().equals("")){
+        if (pagamento.getDataPagamento() == null || pagamento.getDataPagamento().trim().equals("")) {
             //TODO: talvez possamos fazer uma checagem mais complexa verificando se a data está no formato DD/MM/YYYY
             throw new RegraNegocioException("Data de Pagamento inválida");
         }
-
-        if (pagamento.getFormaPagamento() == null || pagamento.getFormaPagamento().trim().equals("")){
+        if (pagamento.getFormaPagamento() == null || pagamento.getFormaPagamento().trim().equals("")) {
             //TODO: podemos definir melhor as formas de pagamento, talvez um enum seria o ideal.
             throw new RegraNegocioException("Forma de Pagamento inválida");
         }
-
     }
 }

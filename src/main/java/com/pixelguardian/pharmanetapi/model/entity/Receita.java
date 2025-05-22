@@ -8,10 +8,9 @@ import javax.persistence.*;
 
 @Data
 @Entity
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 public class Receita {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

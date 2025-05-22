@@ -10,7 +10,6 @@ import org.modelmapper.ModelMapper;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ItemPedidoDTO {
-
     private Long id;
     private Integer quantidade;
     private Float precoUnitario;

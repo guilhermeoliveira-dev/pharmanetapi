@@ -7,10 +7,9 @@ import lombok.NoArgsConstructor;
 import org.modelmapper.ModelMapper;
 
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 public class CategoriaDTO {
-
     private Long id;
     private String nome;
     private String descricao;
