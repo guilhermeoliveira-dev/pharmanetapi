@@ -11,7 +11,7 @@ import java.util.Optional;
 
 @RequiredArgsConstructor
 public class FarmaciaController {
-    private EnderecoService enderecoService;
+    private final EnderecoService enderecoService;
 
     public Farmacia converter(FarmaciaDTO dto) {
         ModelMapper modelMapper = new ModelMapper();

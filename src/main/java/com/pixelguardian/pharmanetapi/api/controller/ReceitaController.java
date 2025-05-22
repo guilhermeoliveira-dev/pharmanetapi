@@ -12,17 +12,12 @@ import java.util.Optional;
 
 @RequiredArgsConstructor
 public class ReceitaController {
+    private final FuncionarioService funcionarioService;
 
-    private FuncionarioService funcionarioService;
-
-    public Receita converter(ReceitaDTO dto){
-
+    public Receita converter(ReceitaDTO dto) {
         ModelMapper modelMapper = new ModelMapper();
-
         Receita receita = modelMapper.map(dto, Receita.class);
-
         if (dto.getIdFuncionario() != null) {
-
             Optional<Funcionario> funcionario = funcionarioService.getFuncionarioById(dto.getIdFuncionario());
             if (funcionario.isPresent()) {
                 receita.setFuncionario(funcionario.get());
@@ -30,9 +25,6 @@ public class ReceitaController {
                 receita.setFuncionario(null);
             }
         }
-
         return receita;
-
     }
-
 }

@@ -11,7 +11,7 @@ import java.util.Optional;
 
 @RequiredArgsConstructor
 public class ClienteController {
-    private EnderecoService enderecoService;
+    private final EnderecoService enderecoService;
 
     public Cliente converter(ClienteDTO dto) {
         ModelMapper modelMapper = new ModelMapper();

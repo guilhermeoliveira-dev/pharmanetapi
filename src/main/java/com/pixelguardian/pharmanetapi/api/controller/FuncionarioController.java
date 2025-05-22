@@ -15,17 +15,13 @@ import java.util.Optional;
 
 @RequiredArgsConstructor
 public class FuncionarioController {
-    
-    private EnderecoService enderecoService;
-    private CargoService cargoService;
-    private FarmaciaService farmaciaService;
+    private final EnderecoService enderecoService;
+    private final CargoService cargoService;
+    private final FarmaciaService farmaciaService;
 
-    public Funcionario converter(FuncionarioDTO dto){
-
+    public Funcionario converter(FuncionarioDTO dto) {
         ModelMapper modelMapper = new ModelMapper();
-        
         Funcionario funcionario = modelMapper.map(dto, Funcionario.class);
-
         if (dto.getIdEndereco() != null) {
             Optional<Endereco> endereco = enderecoService.getEnderecoById((dto.getIdEndereco()));
             if (endereco.isPresent()) {
@@ -34,7 +30,6 @@ public class FuncionarioController {
                 funcionario.setEndereco(null);
             }
         }
-
         if (dto.getIdCargo() != null) {
 
             Optional<Cargo> cargo = cargoService.getCargoById(dto.getIdCargo());
@@ -44,19 +39,14 @@ public class FuncionarioController {
                 funcionario.setCargo(null);
             }
         }
-
-        if (dto.getIdFarmacia() != null){
+        if (dto.getIdFarmacia() != null) {
             Optional<Farmacia> farmacia = farmaciaService.getFarmaciaById(dto.getIdFarmacia());
-            if (farmacia.isPresent()){
+            if (farmacia.isPresent()) {
                 funcionario.setFarmacia(farmacia.get());
-            } else{
+            } else {
                 funcionario.setCargo(null);
             }
         }
-        
         return funcionario;
-
     }
-
-
 }

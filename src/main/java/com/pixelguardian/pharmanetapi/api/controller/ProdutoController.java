@@ -13,17 +13,13 @@ import java.util.Optional;
 
 @RequiredArgsConstructor
 public class ProdutoController {
+    private final TarjaService tarjaService;
+    private final CategoriaService categoriaService;
 
-    private TarjaService tarjaService;
-    private CategoriaService categoriaService;
-
-    public Produto converter(ProdutoDTO dto){
-
+    public Produto converter(ProdutoDTO dto) {
         ModelMapper modelMapper = new ModelMapper();
         Produto produto = modelMapper.map(dto, Produto.class);
-
         if (dto.getIdTarja() != null) {
-
             Optional<Tarja> tarja = tarjaService.getTarjaById(dto.getIdTarja());
             if (tarja.isPresent()) {
                 produto.setTarja(tarja.get());
@@ -31,9 +27,7 @@ public class ProdutoController {
                 produto.setTarja(null);
             }
         }
-
         if (dto.getIdCategoria() != null) {
-
             Optional<Categoria> categoria = categoriaService.getCategoriaById(dto.getIdCategoria());
             if (categoria.isPresent()) {
                 produto.setCategoria(categoria.get());
@@ -41,9 +35,6 @@ public class ProdutoController {
                 produto.setCategoria(null);
             }
         }
-
         return produto;
-
     }
-
 }
