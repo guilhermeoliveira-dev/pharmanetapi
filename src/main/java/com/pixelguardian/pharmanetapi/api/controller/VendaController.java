@@ -10,10 +10,16 @@ import com.pixelguardian.pharmanetapi.service.PagamentoService;
 import com.pixelguardian.pharmanetapi.service.PedidoCompraService;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Optional;
 
+@RestController
+@RequestMapping("/api/v1/vendas")
 @RequiredArgsConstructor
+@CrossOrigin
 public class VendaController {
 
     private final PagamentoService pagamentoService;

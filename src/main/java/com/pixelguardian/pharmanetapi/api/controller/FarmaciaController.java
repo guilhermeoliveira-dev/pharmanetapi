@@ -6,10 +6,16 @@ import com.pixelguardian.pharmanetapi.model.entity.Farmacia;
 import com.pixelguardian.pharmanetapi.service.EnderecoService;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Optional;
 
+@RestController
+@RequestMapping("/api/v1/farmacias")
 @RequiredArgsConstructor
+@CrossOrigin
 public class FarmaciaController {
 
     private final EnderecoService enderecoService;
