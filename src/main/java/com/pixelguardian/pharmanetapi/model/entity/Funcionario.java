@@ -12,6 +12,9 @@ import javax.persistence.*;
 @AllArgsConstructor
 public class Funcionario extends Usuario{
 
+//    @Id
+//    @GeneratedValue(strategy = )
+
     private Float salario;
     private String expediente;
 

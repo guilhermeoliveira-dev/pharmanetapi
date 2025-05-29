@@ -3,6 +3,8 @@ package com.pixelguardian.pharmanetapi.service;
 import com.pixelguardian.pharmanetapi.exception.RegraNegocioException;
 import com.pixelguardian.pharmanetapi.model.entity.Cliente;
 import com.pixelguardian.pharmanetapi.model.repository.ClienteRepository;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -10,12 +12,13 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 
+
 @Service
 public class ClienteService {
 
     private ClienteRepository repository;
 
-    private ClienteService(ClienteRepository repository) {
+    public ClienteService(ClienteRepository repository) {
         this.repository = repository;
     }
 

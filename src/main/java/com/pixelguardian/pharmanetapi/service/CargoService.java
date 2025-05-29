@@ -29,9 +29,9 @@ public class CargoService {
     }
 
     //    TODO: Buscar cargo por funcionário
-    public Optional<Cargo> getCargoByFuncionario(Funcionario funcionario) {
-        return repository.findByFuncionario(funcionario);
-    }
+//    public Optional<Cargo> getCargoByFuncionario(Funcionario funcionario) {
+//        return repository.findByFuncionario(funcionario);
+//    }
 
     @Transactional
     public Cargo salvar(Cargo cargo) {

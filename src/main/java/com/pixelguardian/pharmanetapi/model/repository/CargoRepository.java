@@ -9,5 +9,5 @@ import java.util.List;
 import java.util.Optional;
 
 public interface CargoRepository extends JpaRepository<Cargo, Long> {
-    Optional<Cargo> findByFuncionario(Funcionario funcionario);
+    //Optional<Cargo> findByFuncionario(Funcionario funcionario);
 }

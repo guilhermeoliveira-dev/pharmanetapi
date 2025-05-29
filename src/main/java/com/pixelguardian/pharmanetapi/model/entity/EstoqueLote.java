@@ -14,7 +14,6 @@ import javax.persistence.*;
 @AllArgsConstructor
 public class EstoqueLote extends Estoque {
 
-    //    TODO: Sem @Id nem @GenerateValue?
     private String lote;
     private String dataFabricacao;
     private String dataValidade;
