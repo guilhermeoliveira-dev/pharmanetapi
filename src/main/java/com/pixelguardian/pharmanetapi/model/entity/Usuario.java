@@ -14,7 +14,7 @@ import lombok.NoArgsConstructor;
 public abstract class Usuario {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.TABLE)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
 
     private String nome;
